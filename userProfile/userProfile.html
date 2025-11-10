@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>User Profile | Hippo Type</title>
+
+  <!-- global styles -->
+  <link rel="stylesheet" href="../../styles.css">
+
+  <!-- page specific styles -->
+  <link rel="stylesheet" href="userProfile.css" />
+</head>
+<body>
+  <!--
+    NOTE:
+    The .page-wrapper centers the main container on the page.
+    The .container is the white card (main frame) where everything lives.
+    Navbar is sticky inside the container; the remainder scrolls inside the container.
+  -->
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- NAVBAR (sticky inside container) -->
+      <nav class="navbar" id="navLinks">
+        <div class="logo">
+          <img src="../logo.png" alt="Logo" />
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../leaderboard/leaderboard.html">Leaderboard</a></li>
+          <li><a href="userProfile.html" class="active">Profile</a></li>
+        </ul>
+
+        <div class="theme-toggle">
+          <div class="toggle-btn"></div>
+        </div>
+      </nav>
+
+      <!--
+        CARD BODY:
+        This is the part that scrolls INSIDE the white container.
+        Everything below the navbar goes inside .card-body.
+      -->
+      <div class="card-body">
+        <!-- Profile header -->
+        <section class="profile-header">
+          <div class="profile-pic" aria-hidden="true"></div>
+          <h2 id="usernameDisplay">Username</h2>
+
+          <!-- buttons: Edit (placeholder) and Logout (works) -->
+          <div class="profile-buttons">
+            <button id="editBtn" type="button">Edit Profile</button>
+            <button id="logoutBtn" type="button">Logout</button>
+          </div>
+        </section>
+
+        <!-- Test history -->
+        <section class="test-history">
+          <h3>Test History</h3>
+
+          <!--
+            Wrap the table inside .table-wrapper so the table area can also scroll
+            if there are lots of rows. The whole .card-body still scrolls as needed.
+          -->
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Test Name</th>
+                  <th>Score</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody id="testHistoryTable">
+                <!-- placeholder rows -->
+                <tr><td>Typing Test 1</td><td>78 WPM</td><td>2025-11-08</td></tr>
+                <tr><td>Typing Test 2</td><td>92 WPM</td><td>2025-11-09</td></tr>
+                <tr><td>Typing Test 3</td><td>85 WPM</td><td>2025-11-10</td></tr>
+                <tr><td>Typing Test 4</td><td>88 WPM</td><td>2025-11-11</td></tr>
+                <tr><td>Typing Test 5</td><td>95 WPM</td><td>2025-11-12</td></tr>
+                <tr><td>Typing Test 6</td><td>90 WPM</td><td>2025-11-13</td></tr>
+                <tr><td>Typing Test 7</td><td>80 WPM</td><td>2025-11-14</td></tr>
+                <tr><td>Typing Test 8</td><td>91 WPM</td><td>2025-11-15</td></tr>
+                <tr><td>Typing Test 9</td><td>94 WPM</td><td>2025-11-16</td></tr>
+                <tr><td>Typing Test 10</td><td>89 WPM</td><td>2025-11-17</td></tr>
+                <!-- add more rows to test scrolling -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div> <!-- .card-body -->
+    </div> <!-- .container -->
+  </div> <!-- .page-wrapper -->
+
+
+    <script src="../login/auth.js"></script>
+  <script src="userProfile.js"></script>
+</body>
+</html>

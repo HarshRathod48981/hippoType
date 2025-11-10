@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leaderboard | HippoType</title>
+
+  <!-- global styles -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <!-- leaderboard specific -->
+  <link rel="stylesheet" href="leaderboard.css" />
+</head>
+<body>
+  <div class="container">
+
+    <!-- NAVBAR (same style as homepage) -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../logo.png" alt="Logo" />
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="leaderboard.html" class="active">Leaderboard</a></li>
+        <li><a href="../auth/signup/signup.html" id="authLink">Login/Signup</a></li>
+      </ul>
+
+      <div class="theme-toggle">
+        <div class="toggle-btn"></div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main class="leaderboard-content">
+      <h2>🏆 Leaderboard</h2>
+      <p class="subtitle">Top Typers from HippoType</p>
+
+      <div class="table-container">
+        <table id="leaderboardTable">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Username</th>
+              <th>WPM</th>
+              <th>Accuracy (%)</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <!-- dynamic rows added by JS -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <script src="../auth/auth.js"></script>
+  <script src="leaderboard.js"></script>
+</body>
+</html>

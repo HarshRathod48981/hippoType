@@ -1,0 +1,118 @@
+/* ==========================
+   Typing Game Page Styles
+   Adapted to HippoType UI theme
+   ========================== */
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #eaeaea;
+}
+
+/* container already styled globally */
+
+/* Main typing area inside the card */
+.typing-area {
+  flex: 1;
+  padding: 40px 50px;
+  overflow-y: auto;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+/* Header with timer and new game button */
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 1.2rem;
+}
+
+#info {
+  font-weight: 600;
+  color: #000;
+}
+
+#newGameBtn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+#newGameBtn:hover {
+  background: #333;
+}
+
+/* Game Box */
+#game {
+  line-height: 30px;
+  height: 115px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background: #fafafa;
+}
+
+#game:focus {
+  outline: none;
+  border-color: #000;
+}
+
+/* Words and letters */
+#words {
+  color: #666;
+  font-family: "Roboto Mono", monospace;
+}
+
+.word {
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.letter.correct {
+  color: #111;
+}
+
+.letter.incorrect {
+  color: #e74c3c;
+}
+
+
+/* Cursor */
+#cursor {
+  display: none;
+  width: 2px;
+  height: 1.5rem;
+  background: #000;
+  position: fixed;
+  animation: blink 0.3s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+#game:focus #cursor {
+  display: block;
+}
+
+#game.over #words {
+  opacity: 0.5;
+}
+
+#game.over #cursor {
+  display: none;
+}

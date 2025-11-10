@@ -1,0 +1,245 @@
+/* ===========================
+   USER PROFILE - PAGE STYLES
+   ===========================
+   Comments: lots of comments so you can tweak easily.
+*/
+
+/* ---------- variables (easy to tweak) ---------- */
+/* --container-width: width of the main white card
+   --container-max-height: how tall the card can be relative to viewport
+   --nav-height: rough height of navbar (used to compute scrollable area)
+*/
+:root{
+  --container-width: 1300px;       /* adjust card width */
+  --container-max-height: 86vh;    /* height of card relative to viewport */
+  --nav-height: 72px;              /* expected navbar height */
+  --card-radius: 12px;
+}
+
+/* ---------- page wrapper and body defaults ---------- */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #eaeaea;       /* gray background outside the card */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* center the container horizontally & add top/bottom spacing */
+.page-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;    /* space around the card */
+}
+
+/* ---------- main white card (container) ---------- */
+.container {
+  width: var(--container-width);
+  max-width: calc(100% - 48px);     /* never overflow the viewport horizontally */
+  max-height: var(--container-max-height); /* fixed visual card height */
+  background: #fff;
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  overflow: hidden;   /* crucial: prevents children from overflowing card */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- NAVBAR inside the card ---------- */
+/* Navbar is NOT fixed to viewport; it's sticky inside the .container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+}
+
+
+/* ---------- CARD BODY (scrollable area) ---------- */
+/* This is the part that scrolls inside the white card.
+   It fills remaining container height below navbar.
+*/
+.card-body {
+  /* compute the remaining height inside the card after navbar */
+  height: calc(100% - var(--nav-height));
+  overflow-y: auto;         /* vertical scrolling happens here */
+  padding: 36px 48px;      /* inner padding */
+  box-sizing: border-box;
+}
+
+/* nice scroll bar (optional) */
+.card-body::-webkit-scrollbar {
+  width: 10px;
+}
+.card-body::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 999px;
+}
+
+/* ---------- PROFILE HEADER ---------- */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+/* avatar circle */
+.profile-pic {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  border: 2px solid #ddd;
+}
+
+/* username */
+#usernameDisplay {
+  font-size: 1.25rem;
+  color: #111;
+  margin: 0;
+}
+
+/* edit + logout */
+.profile-buttons {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.profile-buttons button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 2px solid #111;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.14s ease;
+}
+.profile-buttons button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ---------- TEST HISTORY ---------- */
+.test-history {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  margin-bottom: 24px;
+}
+
+/* nice centered title */
+.test-history h3 {
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+/* table wrapper: If table gets long, .card-body already scrolls.
+   But we also give table its own max-height to allow internal scrolling
+   if you prefer (optional). Comment out max-height if you don't want this.
+*/
+.table-wrapper {
+  max-height: 280px;  /* table area height - you can tweak this */
+  overflow-y: auto;
+  border-radius: 6px;
+}
+
+/* table basics */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+/* header row: sticky to stay visible while the table scrolls */
+thead th {
+  position: sticky;
+  top: 0;            /* stays inside the .table-wrapper or .card-body */
+  background: #fff;
+  z-index: 5;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+  font-weight: 700;
+}
+
+/* rows */
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+/* alternate row shading */
+tbody tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+/* small responsiveness tweak */
+@media (max-width: 720px) {
+  :root { --container-width: calc(100% - 40px); }
+  .card-body { padding: 24px; }
+  .navbar { padding: 0 18px; }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Test | Hippo Type</title>
+
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="typing.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="../logo.png" alt="Logo" />
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../leaderboard/leaderboard.html">Leaderboard</a></li>
+          <li><a href="../userProfile/userProfile.html">Profile</a></li>
+        </ul>
+
+        <div class="theme-toggle">
+          <div class="toggle-btn"></div>
+        </div>
+      </nav>
+
+      <!-- MAIN CONTENT -->
+      <main class="typing-area">
+        <h2 class="title">Typing Test</h2>
+
+        <div class="game-header">
+          <div id="info">30</div>
+          <button id="newGameBtn">New Game</button>
+        </div>
+
+        <div id="game" tabindex="0">
+          <div id="words"></div>
+          <div id="cursor"></div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="typing.js"></script>
+  <script src="../login/auth.js"></script>
+</body>
+</html>
