@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   } 
   else if (loggedInUser && userRole === "admin") {
     html = `
-      <li><a href="${prefix}index.html" ${currentPage === "index.html" ? 'class="active"' : ""}>Home</a></li>
-      <li><a href="${prefix}leaderboard/leaderboard.html" ${currentPage === "leaderboard.html" ? 'class="active"' : ""}>Leaderboard</a></li>
-      <li><a href="${prefix}admin/admin.html" ${currentPage === "admin.html" ? 'class="active"' : ""}>🛠️ Admin Panel</a></li>
+      <li><a href="${prefix}../../index.html" ${currentPage === "index.html" ? 'class="active"' : ""}>Home</a></li>
+      <li><a href="${prefix}../../leaderboard/leaderboard.html" ${currentPage === "leaderboard.html" ? 'class="active"' : ""}>Leaderboard</a></li>
+      <li><a href="${prefix}admin/admin/admin.html" ${currentPage === "admin.html" ? 'class="active"' : ""}>Admin Panel</a></li>
     `;
   } 
   else {

@@ -14,6 +14,6 @@ adminLoginForm.addEventListener("submit", (e) => {
     localStorage.setItem("loggedInUser", username);
     localStorage.setItem("userRole", "admin");
     alert("Admin login successful!");
-    window.location.href = "../index.html";
+    window.location.href = "../../admin/admin/admin.html";
   }
 });

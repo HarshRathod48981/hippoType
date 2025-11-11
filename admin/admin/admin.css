@@ -1,0 +1,260 @@
+/* ==========================
+   BASE STYLES (match homepage)
+   ========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #d9d9d9;
+}
+
+/* Main White Container */
+.container {
+  height: 600px;
+  width: 1300px;
+  margin: 50px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar (exact same as homepage) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Navigation Links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+}
+
+/* ==========================
+   ADMIN DASHBOARD LAYOUT
+   ========================== */
+
+/* Layout: sidebar + content inside container */
+.admin-layout {
+  display: flex;
+  flex: 1;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #f7f7f7;
+  border-right: 1px solid #ddd;
+  border-radius: 10px 0 0 10px;
+  padding: 20px;
+  flex-shrink: 0;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #222;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin: 15px 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.sidebar a:hover {
+  color: #000;
+  font-weight: 600;
+}
+
+/* Main Admin Content */
+.admin-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.admin-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.admin-content p {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Dashboard Tiles */
+.tiles {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.tile {
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  padding: 50px 30px;
+  width: 200px;
+  text-align: center;
+  font-weight: 600;
+  text-decoration: none;
+  color: #222;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.tile:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+
+/* Admin layout */
+.admin-layout {
+  display: flex;
+  height: calc(100% - var(--nav-height));
+}
+
+/* Sidebar */
+.sidebar {
+  width: 240px;
+  background: #f9f9f9;
+  border-right: 1px solid #ddd;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+/* Make Admin Menu clickable like a link */
+.sidebar h3 a.menu-link {
+  text-decoration: none;
+  color: #111;
+  transition: color 0.2s ease;
+}
+.sidebar h3 a.menu-link:hover {
+  color: #0077ff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.2s ease, transform 0.1s ease;
+}
+
+.sidebar ul li a.active {
+  color: #0077ff;
+  font-weight: 600;
+}
+
+.sidebar ul li a:hover {
+  color: #0077ff;
+  transform: translateX(3px);
+}
+
+/* Main admin content */
+.admin-content {
+  flex: 1;
+  padding: 36px 48px;
+  overflow-y: auto;
+}

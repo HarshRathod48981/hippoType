@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Settings | HippoType</title>
+
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../admin/admin.css" />
+  <link rel="stylesheet" href="adminSettings.css" />
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="../../../hippo.png" alt="Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="../../../index.html">Home</a></li>
+          <li><a href="../../../leaderboard/leaderboard.html">Leaderboard</a></li>
+          <li><a href="../admin/admin.html" class="active">🛠️ Admin Panel</a></li>
+        </ul>
+        <div class="theme-toggle">
+          <div class="toggle-btn"></div>
+        </div>
+      </nav>
+
+      <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <h3><a href="../admin/admin.html" class="menu-link">Admin Menu</a></h3>
+          <ul>
+            <li><a href="../adminAnalytics/adminAnalytics.html">📊 Analytics</a></li>
+            <li><a href="../adminSettings/adminSettings.html" class="active">⚙️ Settings</a></li>
+            <li><a href="../adminUserManagement/adminUserManagement.html">👥 User Management</a></li>
+          </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-content">
+          <h2>Admin Settings</h2>
+
+          <!-- Change Password -->
+          <section class="settings-section">
+            <h3>Change Password</h3>
+            <div class="form-group">
+              <input type="password" id="newPassword" placeholder="New Password">
+              <input type="password" id="confirmPassword" placeholder="Confirm Password">
+              <button id="updatePasswordBtn">Update Password</button>
+            </div>
+          </section>
+
+          <!-- Test Duration -->
+          <section class="settings-section">
+            <h3>Typing Test Duration (in seconds)</h3>
+            <div class="form-group">
+              <input type="number" id="testDuration" min="10" placeholder="Enter duration (e.g. 30)">
+              <button id="saveDurationBtn">Save Duration</button>
+            </div>
+          </section>
+
+          <!-- Maintenance Mode -->
+          <section class="settings-section">
+            <h3>Maintenance Mode</h3>
+            <label class="switch">
+              <input type="checkbox" id="maintenanceToggle">
+              <span class="slider"></span>
+            </label>
+            <p>When enabled, users will see a maintenance message instead of the typing test.</p>
+          </section>
+
+          <!-- Edit Site Rules -->
+          <section class="settings-section">
+            <h3>Edit Site Notice / Rules</h3>
+            <textarea id="siteNotice" rows="4" placeholder="Enter message to display on user dashboard..."></textarea>
+            <button id="saveNoticeBtn">Save Notice</button>
+          </section>
+
+          <!-- Logout -->
+          <button id="adminLogoutBtn" class="logout-btn">Logout</button>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="adminSettings.js"></script>
+  <script src="../../theme.js"></script>
+</body>
+</html>

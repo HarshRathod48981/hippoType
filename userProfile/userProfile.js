@@ -4,58 +4,85 @@
    Handles:
    - Checking if a user is logged in
    - Displaying username
+   - Displaying user's test history from localStorage
    - Logging out
    - Redirecting unauthorized users
 */
 
-// 1️⃣ Get references to elements on the page
+// ----------------------
+// 1️⃣ DOM References
+// ----------------------
 const usernameDisplay = document.getElementById("usernameDisplay");
 const logoutBtn = document.getElementById("logoutBtn");
+const testHistoryTable = document.getElementById("testHistoryTable");
 
-// 2️⃣ Check if user is logged in
+// ----------------------
+// 2️⃣ User Validation
+// ----------------------
 const loggedInUser = localStorage.getItem("loggedInUser");
 const userRole = localStorage.getItem("userRole");
 
-// If no user is logged in, redirect to signup page
+// Redirect if user not logged in
 if (!loggedInUser || userRole !== "user") {
   window.location.href = "../auth/signup/signup.html";
 } else {
-  // Show the username in the profile header
   usernameDisplay.textContent = loggedInUser;
 }
 
-/* ================================
-   LOGOUT FUNCTIONALITY
-   ================================ */
+// ----------------------
+// 3️⃣ Populate Test History
+// ----------------------
+function loadUserHistory() {
+  const leaderboard = JSON.parse(localStorage.getItem("leaderboardData")) || [];
+  const userTests = leaderboard.filter(entry => entry.username === loggedInUser);
 
+  testHistoryTable.innerHTML = "";
+
+  if (userTests.length === 0) {
+    testHistoryTable.innerHTML = `
+      <tr>
+        <td colspan="3" style="text-align:center; color:#555;">
+          No test history yet.
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  // Make a reversed copy so latest appears first (don't mutate original array)
+  const reversedTests = [...userTests].reverse();
+  const total = reversedTests.length; // total number of tests
+
+  reversedTests.forEach((test, index) => {
+    // index = 0 -> newest -> label = total
+    const labelNumber = total - index;
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>Typing Test ${labelNumber}</td>
+      <td>${test.wpm} WPM (${test.accuracy}%)</td>
+      <td>${test.date}</td>
+    `;
+    testHistoryTable.appendChild(row);
+  });
+}
+
+loadUserHistory();
+
+// ----------------------
+// 4️⃣ Logout Functionality
+// ----------------------
 logoutBtn.addEventListener("click", () => {
-  // Clear user info from localStorage
   localStorage.removeItem("loggedInUser");
   localStorage.removeItem("userRole");
-
-  // Optional alert for clarity
   alert("You have been logged out.");
-
-  // Redirect to signup page
   window.location.href = "../auth/signup/signup.html";
 });
 
-/* ================================
-   PAGE SHOW EVENT (prevents 'Back' after logout)
-   ================================ */
-
-// When the user tries to go back using browser navigation,
-// this ensures the profile page doesn’t reappear.
+// ----------------------
+// 5️⃣ Prevent Back Navigation After Logout
+// ----------------------
 window.addEventListener("pageshow", (event) => {
   if (!localStorage.getItem("loggedInUser")) {
     window.location.href = "../auth/signup/signup.html";
   }
 });
-
-/* ================================
-   FUTURE IMPROVEMENTS (optional)
-   ================================
-   // - Display test history dynamically from localStorage
-   // - Add edit profile feature (change username/email)
-   // - Save typing test results per user and show them here
-*/

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Analytics | HippoType</title>
+
+  <!-- global and page styles -->
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../admin/admin.css" />
+  <link rel="stylesheet" href="adminAnalytics.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="container">
+      <!-- NAVBAR -->
+      <nav class="navbar">
+        <div class="logo">
+          <img src="../../../hippo.png" alt="Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="../../../index.html">Home</a></li>
+          <li><a href="../../../leaderboard/leaderboard.html">Leaderboard</a></li>
+          <li><a href="../admin/admin.html" class="active">🛠️ Admin Panel</a></li>
+        </ul>
+        <div class="theme-toggle">
+          <div class="toggle-btn"></div>
+        </div>
+      </nav>
+
+      <div class="admin-layout">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+          <h3><a href="../admin/admin.html" class="menu-link">Admin Menu</a></h3>
+          <ul>
+            <li><a href="../adminAnalytics/adminAnalytics.html" class="active">📊 Analytics</a></li>
+            <li><a href="../adminSettings/adminSettings.html">⚙️ Settings</a></li>
+            <li><a href="../adminUserManagement/adminUserManagement.html">👥 User Management</a></li>
+          </ul>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="admin-content">
+          <h2 class="dashboard-title">Admin Analytics Dashboard</h2>
+
+          <div class="charts-grid">
+            <div class="chart-card">
+              <h3>Average WPM per User</h3>
+              <canvas id="wpmChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+              <h3>Accuracy Trend</h3>
+              <canvas id="accuracyChart"></canvas>
+            </div>
+
+            <div class="chart-card">
+              <h3>Tests Distribution per User</h3>
+              <canvas id="testDistributionChart"></canvas>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../../auth/auth.js"></script>
+  <script src="adminAnalytics.js"></script>
+  <script src="../../theme.js"></script>
+</body>

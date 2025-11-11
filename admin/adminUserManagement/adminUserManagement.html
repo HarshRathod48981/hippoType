@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin | User Management</title>
+
+  <!-- global + admin styles -->
+  <link rel="stylesheet" href="../../styles.css" />
+  <link rel="stylesheet" href="../admin/admin.css" />
+  <link rel="stylesheet" href="adminUserManagement.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="../../hippo.png" alt="Logo" />
+      </div>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../../index.html">Home</a></li>
+        <li><a href="../../leaderboard/leaderboard.html">Leaderboard</a></li>
+        <li><a href="../admin/admin.html" class="active">🛠️ Admin Panel</a></li>
+      </ul>
+
+      <div class="theme-toggle">
+        <div class="toggle-btn"></div>
+      </div>
+    </nav>
+
+    <div class="admin-layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <h3><a href="../admin/admin.html">Admin Menu</a></h3>
+        <ul>
+          <li><a href="../adminAnalytics/adminAnalytics.html">📊 Analytics</a></li>
+          <li><a href="../adminSettings/adminSettings.html">⚙️ Settings</a></li>
+          <li><a href="adminUserManagement.html" class="active">👥 User Management</a></li>
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="admin-content">
+        <h2>Admin User Management</h2>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+          <input type="text" id="searchUser" placeholder="🔍 Search users...">
+        </div>
+
+        <!-- User Table -->
+        <div class="table-wrapper">
+          <table id="userTable">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Total Tests Taken</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- dynamically loaded -->
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="../../auth/auth.js"></script>
+  <script src="adminUserManagement.js"></script>
+</body>
+</html>

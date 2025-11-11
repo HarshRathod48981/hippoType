@@ -1,0 +1,106 @@
+/* ==============================
+   ADMIN USER MANAGEMENT PAGE
+   ============================== */
+
+.admin-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.admin-content h2 {
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #111;
+}
+
+/* Search bar */
+.search-box {
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.search-box input:focus {
+  border-color: #000;
+}
+
+/* Table */
+.table-wrapper {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #f6f6f6;
+}
+
+th, td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-weight: 600;
+  color: #333;
+}
+
+td {
+  color: #444;
+}
+
+/* Buttons */
+.action-btn {
+  padding: 6px 12px;
+  border: 1px solid #000;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-right: 8px;
+}
+
+.action-btn.edit {
+  background: #fff;
+}
+
+.action-btn.delete {
+  background: #000;
+  color: #fff;
+}
+
+.action-btn:hover {
+  opacity: 0.8;
+}
+
+/* Scrollbar */
+.admin-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-content::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.12);
+  border-radius: 8px;
+}
+
+/* Sidebar active link */
+.sidebar a.active {
+  font-weight: 600;
+  text-decoration: underline;
+}

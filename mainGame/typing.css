@@ -55,6 +55,8 @@ body {
 
 /* Game Box */
 #game {
+  user-select: none;
+  caret-color: transparent;
   line-height: 30px;
   height: 115px;
   overflow: hidden;

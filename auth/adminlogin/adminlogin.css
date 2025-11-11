@@ -1,55 +1,200 @@
-.admin-login-container {
-  width: 100%;
+/* ==============================
+   ADMIN LOGIN PAGE STYLES
+   ============================== */
+
+/* Reset & Fonts */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background same as site */
+body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
+  background: #d9d9d9;
+}
+
+/* Outer white container (matches site layout) */
+.container {
+  height: 600px;
+  width: 1300px;
+  margin: 50px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar (same as homepage) */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+/* Theme toggle */
+.theme-toggle {
+  width: 35px;
+  height: 35px;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.toggle-btn {
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+}
+
+/* ==============================
+   LOGIN FORM SECTION
+   ============================== */
+
+.admin-login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
 }
 
 .admin-login-box {
   background: #fff;
-  padding: 40px;
-  border-radius: 15px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 360px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 40px 50px;
+  width: 350px;
   text-align: center;
+  transition: all 0.3s ease;
 }
 
 .admin-login-box h2 {
-  margin-bottom: 20px;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #222;
+  margin-bottom: 25px;
+  color: #111;
+  font-size: 1.4rem;
 }
 
+/* Inputs */
 .admin-login-box input {
   width: 100%;
-  padding: 12px;
-  margin: 8px 0;
+  padding: 10px 14px;
+  margin-bottom: 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 0.95rem;
   outline: none;
-  transition: 0.2s;
+  transition: border 0.2s ease;
 }
 
 .admin-login-box input:focus {
-  border-color: #000;
+  border: 1px solid #000;
 }
 
+/* Login Button */
 .admin-login-box button {
   width: 100%;
+  padding: 10px;
   background: #000;
-  color: #fff;
   border: none;
-  padding: 12px;
-  font-size: 1rem;
+  color: #fff;
   border-radius: 6px;
-  margin-top: 10px;
   cursor: pointer;
-  transition: 0.3s;
+  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 .admin-login-box button:hover {
   background: #333;
+}
+
+/* Extra links below the form */
+.extra-links {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.extra-links p {
+  font-size: 0.9rem;
+  color: #333;
+  margin: 6px 0;
+}
+
+.extra-links a {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.extra-links a:hover {
+  color: #555;
+}
+
+/* ==============================
+   RESPONSIVE FIXES
+   ============================== */
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .admin-login-box {
+    width: 90%;
+    padding: 30px;
+  }
 }

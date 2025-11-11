@@ -1,0 +1,112 @@
+/* Basic layout inherited from admin.css */
+
+.admin-content {
+  padding: 36px 48px;
+  overflow-y: auto;
+}
+
+/* Headings */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.settings-section {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.settings-section h3 {
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.form-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input[type="password"],
+input[type="number"],
+textarea {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+}
+
+button {
+  padding: 10px 16px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Toggle Switch (Maintenance Mode) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 25px;
+  margin-right: 10px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 19px; width: 19px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #111;
+}
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* Logout button */
+.logout-btn {
+  margin-top: 25px;
+  width: 100%;
+  background: #ff4d4d;
+  color: #fff;
+  border: none;
+}
+.logout-btn:hover {
+  background: #cc0000;
+}
